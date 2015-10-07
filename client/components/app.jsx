@@ -1,24 +1,18 @@
 App = React.createClass({
-  render() {
-    const posts = [{
-      _id: 1,
-      url: 'http://google.com',
-      title: 'Google'
-    }, {
-      _id: 2,
-      url: 'http://ryanyogan.com',
-      title: 'Ryan Yogan'
-    }, {
-      _id: 3,
-      url: 'http://meteor.com',
-      title: 'Meteor'
-    }];
+  mixins: [ReactMeteorData],
 
+  getMeteorData() {
+    return {
+      posts: Posts.find().fetch()
+    }
+  },
+
+  render() {
     return (
       <div className='container'>
         <Header />
 
-        <PostsList posts={posts} />
+        <PostsList posts={this.data.posts} />
       </div>
     );
   }
