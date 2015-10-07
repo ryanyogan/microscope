@@ -27,3 +27,4 @@ cosmos:browserify
 npm-container
 sanjo:jasmine
 velocity:html-reporter
+dpraburaj:react-spin
