@@ -1,9 +1,10 @@
 App = React.createClass({
+  //TODO: Create a decorator for this mixin
   mixins: [ReactMeteorData],
 
   getMeteorData() {
     return {
-      posts: Posts.find().fetch()
+      posts: Posts.find({}).fetch()
     }
   },
 
